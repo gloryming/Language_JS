@@ -37,20 +37,18 @@ var TestLayer = cc.Layer.extend({
 
 	},
 	loopCallback:function(sender){
-		cc.log("loopCallback entered!");
 		var i = 0;
     
     	var start = this.getCurrentTime();
     
     	while (i < this.N_Loop) {
         	i++;
-        	cc.log("Count: " + i);
     	}
     
     	var end = this.getCurrentTime();
     	var duration = end - start;
-    
-		cc.log("CallFunc:start = " + start + " end = " + end + " duration = " + duration);
+        cc.log("i = " + i);
+		cc.log("loop:start = " + start + " end = " + end + " duration = " + duration);
 	},
 	callFuncCallback:function(sender){
 		var sum = 0, i = 0;
@@ -61,6 +59,7 @@ var TestLayer = cc.Layer.extend({
             sum += this.addFunc(i, 1);
             i++;
         }
+                                
     
         var end = this.getCurrentTime();
         var duration = end - start;
@@ -82,13 +81,8 @@ var TestLayer = cc.Layer.extend({
 		var end = this.getCurrentTime();
         var duration = end - start;
         
-        cc.log("CallFunc:start = " + start + " end = " + end + " duration = " + duration);
+        cc.log("mat4:start = " + start + " end = " + end + " duration = " + duration);
         
-//		for (var i = 0; i < 4; ++i) {
-//        	for (var j = 0; j < 4; ++j) {
-//            	cc.log("c[" + i + "][" + j + "] = " + this.c[i * 4 + j]);
-//        	}
-//    	}
 	},
 	getCurrentTime:function(){
 		var time = new Date();
